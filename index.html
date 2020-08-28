@@ -100,6 +100,7 @@
         function setInfo() {
             localStorage.setItem("username", prompt("请输入你的名字（不想填就**取消**）"));
             localStorage.setItem("userno", prompt("请输入你的学号（不想填就**取消**）"));
+            localStorage.setItem("campus", prompt("请输入想要进入的校区（以XX校区作为输入格式），默认为闵行校区，如果是闵行校区，可以**取消**"));
             window.location.reload();
         }
 
@@ -137,6 +138,14 @@
         // 设置学号
         var userno = document.getElementById("user-no");
         userno.innerHTML = localStorage.getItem("userno");
+        // 设置校区
+        var campus = document.getElementById("campus");
+        if (localStorage.getItem("campus") == "null"){
+          campus.innerHTML = "闵行校区";
+        }
+        else {
+          campus.innerHTML = localStorage.getItem("campus");
+        }
     </script>
   </body>
 
